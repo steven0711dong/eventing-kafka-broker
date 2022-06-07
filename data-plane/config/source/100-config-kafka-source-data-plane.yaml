@@ -114,7 +114,7 @@ data:
     fetch.max.bytes=52428800
     isolation.level=read_uncommitted
     max.poll.interval.ms=300000
-    max.poll.records=500
+    max.poll.records=16
     # partition.assignment.strategy=org.apache.kafka.clients.consumer.CooperativeStickyAssignor
     receive.buffer.bytes=65536
     request.timeout.ms=30000
@@ -130,7 +130,7 @@ data:
     # ssl.keystore.type=
     # ssl.protocol=
     # ssl.provider=
-    auto.commit.interval.ms=5000
+    auto.commit.interval.ms=500
     check.crcs=true
     # client.rack=
     fetch.max.wait.ms=500

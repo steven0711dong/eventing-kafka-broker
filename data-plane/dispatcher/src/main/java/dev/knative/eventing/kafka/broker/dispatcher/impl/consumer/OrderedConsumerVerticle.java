@@ -36,6 +36,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.sql.Timestamp;
 
 import static dev.knative.eventing.kafka.broker.core.utils.Logging.keyValue;
 
@@ -175,6 +176,8 @@ public class OrderedConsumerVerticle extends BaseConsumerVerticle {
       // Once we have new records, we force add them to internal per-partition queues.
       bucket.forceAddTokens(records.size());
     }
+    Timestamp timestamp1 = new Timestamp(System.currentTimeMillis());
+    System.out.println("Time is: " + timestamp1.toString() + ". received records count: " + records.size());
 
     // Put records in internal per-partition queues.
     for (int i = 0; i < records.size(); i++) {
